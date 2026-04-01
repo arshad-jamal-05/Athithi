@@ -1,0 +1,216 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <body>
+      <h1>Add Your Property to the Marketplace</h1>
+      <br />
+      <form
+        method="post"
+        ,
+        action="/listings"
+        novalidate
+        class="needs-validation"
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title: </label><br />
+          <input
+            type="text"
+            name="listing[title]"
+            id="title"
+            class="form-control"
+            placeholder="Add an attractive title (e.g., Cozy Mountain Retreat)"
+            required
+          />
+          <div class="valid-feedback">Great pick, Looks great!</div>
+          <div class="invalid-feedback">Title is a must!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="desc" class="form-label">Enter Description: </label><br />
+          <textarea
+            name="listing[description]"
+            id="desc"
+            class="form-control"
+            placeholder="Describe the property, amenities, and nearby attractions"
+            required
+          ></textarea>
+          <div class="invalid-feedback">
+            Please provide a detailed description to attract more interest.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image: </label><br />
+          <input
+            type="file"
+            name="listing[image]"
+            id="image"
+            class="form-control"
+            required
+            accept="image/png, image/jpeg, image/jpg"
+          />
+          <div class="form-text text-muted">
+            Max size: 2MB. Only JPG, JPEG, PNG allowed.
+          </div>
+          <div class="valid-feedback">Image selected successfully!</div>
+          <div class="invalid-feedback">
+            Please upload an image of your property.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-5">
+            <label for="price" class="form-label">Price: </label><br />
+            <input
+              name="listing[price]"
+              placeholder="&#8377; 5000 / night"
+              id="price"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Looks perfect!</div>
+            <div class="invalid-feedback">Price is required!</div>
+          </div>
+
+          <div class="mb-3 col-md-7">
+            <label for="cntry" class="form-label">Country: </label> <br />
+            <input
+              type="text"
+              name="listing[country]"
+              id="cntry"
+              class="form-control"
+              placeholder="Enter the country (e.g., India)"
+              required
+            />
+            <div class="valid-feedback">Spot on!</div>
+            <div class="invalid-feedback">Add a country!</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Enter Location: </label
+          ><br />
+          <input
+            type="text"
+            name="listing[location]"
+            id="location"
+            class="form-control"
+            placeholder="Enter the city or area (e.g., Delhi)"
+            required
+          />
+          <div class="valid-feedback">Perfect location!</div>
+          <div class="invalid-feedback">Location is required!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Property Category:</label>
+          <select
+            name="listing[category]"
+            id="category"
+            class="form-select"
+            required
+          >
+            <option value="">Select a category</option>
+            <option value="Trending">Trending</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Iconic Cities">Iconic Cities</option>
+            <option value="Mountains">Mountains</option>
+            <option value="Castle">Castle</option>
+            <option value="Arctics">Arctics</option>
+            <option value="Camping">Camping</option>
+            <option value="Farms">Farms</option>
+            <option value="Hotels">Hotels</option>
+            <option value="Beach">Beach</option>
+            <option value="Nature">Nature</option>
+            <option value="Winter">Winter</option>
+            <option value="Lake">Lake</option>
+            <option value="Apartment">Apartment</option>
+            <option value="House">House</option>
+            <option value="Breakfast">Breakfast</option>
+          </select>
+          <div class="invalid-feedback">Please select a property category.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="features" class="form-label"
+            >Property Features / Amenities:</label
+          >
+          <select
+            name="listing[features]"
+            id="features"
+            class="form-select"
+            multiple
+            required
+          >
+            <option value="WiFi">WiFi</option>
+            <option value="Parking">Parking</option>
+            <option value="Pool">Pool</option>
+            <option value="Air Conditioning">Air Conditioning</option>
+            <option value="Pet Friendly">Pet Friendly</option>
+            <option value="Breakfast Included">Breakfast Included</option>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Washer">Washer</option>
+            <option value="TV">TV</option>
+            <option value="Balcony">Balcony</option>
+            <option value="Garden">Garden</option>
+            <option value="Gym">Gym</option>
+            <option value="Fireplace">Fireplace</option>
+            <option value="Wheelchair Accessible">Wheelchair Accessible</option>
+            <option value="City View">City View</option>
+            <option value="Mountain View">Mountain View</option>
+            <option value="Beachfront">Beachfront</option>
+            <option value="Historic Site Nearby">Historic Site Nearby</option>
+            <option value="Nightlife">Nightlife</option>
+            <option value="Shopping District">Shopping District</option>
+            <option value="Adventure Activities">Adventure Activities</option>
+            <option value="Cultural Hotspot">Cultural Hotspot</option>
+            <option value="Family Friendly">Family Friendly</option>
+            <option value="Romantic Getaway">Romantic Getaway</option>
+            <option value="Eco-Friendly">Eco-Friendly</option>
+            <option value="Trip Package">Trip Package</option>
+            <option value="Guided Tours">Guided Tours</option>
+          </select>
+          <div class="form-text">
+            Hold Ctrl (Windows) or Cmd (Mac) to select multiple features.
+          </div>
+          <div class="invalid-feedback">
+            Please select at least one feature/amenity.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="cityTags" class="form-label">Place/Trip Tags:</label>
+          <select
+            name="listing[cityTags]"
+            id="cityTags"
+            class="form-select"
+            multiple
+          >
+            <option value="Trip">Trip</option>
+            <option value="Adventure">Adventure</option>
+            <option value="City">City</option>
+            <option value="Nature">Nature</option>
+            <option value="Culture">Culture</option>
+            <option value="Beach">Beach</option>
+            <option value="Mountain">Mountain</option>
+            <option value="Romantic Getaway">Romantic Getaway</option>
+            <option value="Family Friendly">Family Friendly</option>
+            <option value="Eco-Friendly">Eco-Friendly</option>
+            <option value="Guided Tours">Guided Tours</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Nightlife">Nightlife</option>
+          </select>
+          <div class="form-text">
+            Tag your listing with relevant trip types or experiences. Hold Ctrl
+            (Windows) or Cmd (Mac) to select multiple.
+          </div>
+        </div>
+
+        <!-- Add margin below the submit button to prevent it from touching the footer -->
+        <button class="btn btn-dark add-btn mt-3 mb-5">Submit</button>
+      </form>
+    </body>
+  </div>
+</div>
