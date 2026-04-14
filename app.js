@@ -14,7 +14,7 @@ const ExpressError = require("./utils/expressError.js");
 
 //Authentication, cookies and session:
 const session = require("express-session");
-const MongoStore = require('connect-mongo');
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
