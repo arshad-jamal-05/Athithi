@@ -13,7 +13,7 @@ Athithi is a modern, eco-friendly property listing and booking platform inspired
 - **Go Green Theme**: Animated green campaign, floating leaves, and eco-friendly messaging throughout the site.
 - **Engaging Homepage**: Welcome banner, property tips, and interactive filter slider.
 - **Show Page**: Booking calendar, cart summary (base price, tax, total), reviews, and similar properties.
-- **Footer**: Animated, colorful, and engaging social/contact icons. "Contact Us" button opens mailto to harilalsahk@gmail.com. Green campaign and quick links.
+- **Footer**: Animated, colorful, and engaging social/contact icons. "Contact Us" button opens mailto to bharatamir4321@gmail.com. Green campaign and quick links.
 - **Accessibility**: Flash messages and filter UIs are mobile-friendly and accessible.
 - **All client-side scripts** are organized in `public/js` for maintainability.
 
